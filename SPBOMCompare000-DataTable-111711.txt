@@ -1,0 +1,133 @@
+V1.00
+126
+10
+PrePopulate
+
+level|~|sequence|~|quantity|~|parent|~|partno|~|unit|~|description|~|revision|~|category|~|source
+N|~|N|~|F|~|S|~|S|~|S|~|S|~|S|~|S|~|S
+0|~|0|~|0|~|RAW MATERIALS|~|RAW MATERIALS|~|EA|~||~||~||~|
+1|~|1|~|1|~|RAW MATERIALS|~|1010|~|SF|~|Plate 1-1/4"Thk., SA-516 GR.70|~||~||~|J
+1|~|2|~|1|~|RAW MATERIALS|~|1001|~|SF|~|Plate 3/16"Thk., SA-516 GR.70|~||~||~|J
+1|~|3|~|1|~|RAW MATERIALS|~|1008|~|SF|~|Plate 7/8"Thk., SA-516 GR.70|~||~||~|J
+1|~|4|~|1|~|RAW MATERIALS|~|1009|~|SF|~|Plate 1"Thk., SA-516 GR.70|~||~||~|J
+1|~|5|~|1|~|RAW MATERIALS|~|1011|~|SF|~|Plate 1-1/2"Thk., SA-516 GR.70|~||~||~|J
+1|~|6|~|1|~|RAW MATERIALS|~|1002|~|SF|~|Plate 1/4"Thk., SA-516 GR.70|~||~||~|J
+1|~|7|~|1|~|RAW MATERIALS|~|1000|~|SF|~|Plate 1/8"Thk., SA-516 GR.70|~||~||~|J
+1|~|8|~|1|~|RAW MATERIALS|~|1003|~|SF|~|Plate 5/16"Thk., SA-516 GR.70|~||~||~|J
+1|~|9|~|1|~|RAW MATERIALS|~|1004|~|SF|~|Plate 3/8"Thk., SA-516 GR.70|~||~||~|P
+1|~|10|~|1|~|RAW MATERIALS|~|1005|~|SF|~|Plate 1/2"Thk., SA-516 GR.70|~||~||~|P
+1|~|11|~|1|~|RAW MATERIALS|~|1006|~|SF|~|Plate 5/8"Thk., SA-516 GR.70|~||~||~|P
+1|~|12|~|1|~|RAW MATERIALS|~|1007|~|SF|~|Plate 3/4"Thk., SA-516 GR.70|~||~||~|J
+1|~|13|~|1|~|RAW MATERIALS|~|1012|~|SF|~|Plate 1-3/4"Thk., SA-516 GR.70|~||~||~|J
+1|~|14|~|1|~|RAW MATERIALS|~|1013|~|SF|~|Plate 2"Thk., SA-516 GR.70|~||~||~|J
+1|~|15|~|1|~|RAW MATERIALS|~|1014|~|SF|~|Plate 2-1/4"Thk., SA-516 GR.70|~||~||~|J
+1|~|16|~|1|~|RAW MATERIALS|~|1015|~|FT|~|1" NPS PIPE, SA53-B|~||~||~|P
+1|~|17|~|1|~|RAW MATERIALS|~|1016|~|FT|~|1-1/4" NPS PIPE, SA53-B|~||~||~|J
+1|~|18|~|1|~|RAW MATERIALS|~|1017|~|FT|~|1-1/2" NPS PIPE, SA53-B|~||~||~|J
+1|~|19|~|1|~|RAW MATERIALS|~|1018|~|FT|~|2" NPS PIPE, SA53-B|~||~||~|J
+1|~|20|~|1|~|RAW MATERIALS|~|1019|~|FT|~|2-1/2" NPS PIPE, SA53-B|~||~||~|P
+1|~|21|~|1|~|RAW MATERIALS|~|1020|~|FT|~|3" NPS PIPE, SA53-B|~||~||~|P
+1|~|22|~|1|~|RAW MATERIALS|~|1021|~|FT|~|3-1/2" NPS PIPE, SA53-B|~||~||~|J
+1|~|23|~|1|~|RAW MATERIALS|~|1022|~|FT|~|4" NPS PIPE, SA53-B|~||~||~|P
+1|~|24|~|1|~|RAW MATERIALS|~|1023|~|FT|~|4-1/2" NPS PIPE, SA53-B|~||~||~|J
+1|~|25|~|1|~|RAW MATERIALS|~|1024|~|FT|~|5" NPS PIPE, SA53-B|~||~||~|P
+1|~|26|~|1|~|RAW MATERIALS|~|1025|~|FT|~|6" NPS PIPE, SA53-B|~||~||~|P
+1|~|27|~|1|~|RAW MATERIALS|~|1026|~|FT|~|7" NPS PIPE, SA53-B|~||~||~|J
+1|~|28|~|1|~|RAW MATERIALS|~|1027|~|FT|~|8" NPS PIPE, SA53-B|~||~||~|P
+1|~|29|~|1|~|RAW MATERIALS|~|1028|~|FT|~|10" NPS PIPE, SA53-B|~||~||~|P
+1|~|30|~|1|~|RAW MATERIALS|~|1029|~|FT|~|12" NPS PIPE, SA53-B|~||~||~|P
+1|~|31|~|1|~|RAW MATERIALS|~|1030|~|FT|~|14" NPS PIPE, SA53-B|~||~||~|J
+1|~|32|~|1|~|RAW MATERIALS|~|1031|~|FT|~|16" NPS PIPE, SA53-B|~||~||~|P
+1|~|33|~|1|~|RAW MATERIALS|~|1032|~|FT|~|18" NPS PIPE, SA53-B|~||~||~|J
+1|~|34|~|1|~|RAW MATERIALS|~|1033|~|FT|~|20" NPS PIPE, SA53-B|~||~||~|P
+1|~|35|~|1|~|RAW MATERIALS|~|1034|~|FT|~|24" NPS PIPE, SA53-B|~||~||~|P
+1|~|36|~|1|~|RAW MATERIALS|~|1035|~|FT|~|1/2" OD SOLID BAR, SA-36|~||~||~|P
+1|~|37|~|1|~|RAW MATERIALS|~|1036|~|FT|~|1" OD SOLID BAR, SA36|~||~||~|P
+1|~|38|~|1|~|RAW MATERIALS|~|1037|~|FT|~|1-1/4" SOLID BAR, SA36|~||~||~|J
+1|~|39|~|1|~|RAW MATERIALS|~|1038|~|FT|~|1/2"X13 STL THRD ROD, GR B7|~||~||~|P
+1|~|40|~|1|~|RAW MATERIALS|~|1039|~|FT|~|1" OD TUBE, SA178-A|~||~||~|P
+1|~|41|~|1|~|RAW MATERIALS|~|1040|~|FT|~|1" ID POLYAMIDE CORR TUBE|~||~||~|P
+1|~|42|~|1|~|RAW MATERIALS|~|1041|~|FT|~|1-1/2" OD X.095" TUBE, SA178-A|~||~||~|P
+1|~|43|~|1|~|RAW MATERIALS|~|1042|~|FT|~|2-1/2" OD X.120" TUBE, SA178-A|~||~||~|P
+1|~|44|~|1|~|RAW MATERIALS|~|1043|~|EA|~|2" NPT, STEEL THREADED CAP|~||~||~|P
+1|~|45|~|1|~|RAW MATERIALS|~|1044|~|FT|~|1" NPS PIPE, SA106-B|~||~||~|P
+1|~|46|~|1|~|RAW MATERIALS|~|1045|~|FT|~|1-1/4" NPS PIPE, SA106-B|~||~||~|P
+1|~|47|~|1|~|RAW MATERIALS|~|1046|~|FT|~|1-1/2" NPS PIPE, SA106-B|~||~||~|P
+1|~|48|~|1|~|RAW MATERIALS|~|1047|~|FT|~|2" NPS PIPE, SA106-B|~||~||~|P
+1|~|49|~|1|~|RAW MATERIALS|~|1048|~|FT|~|2-1/2" NPS PIPE, SA106-B|~||~||~|J
+1|~|50|~|1|~|RAW MATERIALS|~|1049|~|FT|~|3" NPS PIPE, SA106-B|~||~||~|J
+1|~|51|~|1|~|RAW MATERIALS|~|1050|~|FT|~|3-1/2" NPS PIPE, SA106-B|~||~||~|J
+1|~|52|~|1|~|RAW MATERIALS|~|1051|~|FT|~|4" NPS PIPE, SA106-B|~||~||~|J
+1|~|53|~|1|~|RAW MATERIALS|~|1052|~|FT|~|4-1/2" NPS PIPE, SA106-B|~||~||~|J
+1|~|54|~|1|~|RAW MATERIALS|~|1053|~|FT|~|5" NPS PIPE, SA106-B|~||~||~|J
+1|~|55|~|1|~|RAW MATERIALS|~|1054|~|FT|~|6" NPS PIPE, SA106-B|~||~||~|J
+1|~|56|~|1|~|RAW MATERIALS|~|1055|~|FT|~|7" NPS PIPE, SA106-B|~||~||~|J
+1|~|57|~|1|~|RAW MATERIALS|~|1056|~|FT|~|8" NPS PIPE, SA106-B|~||~||~|P
+1|~|58|~|1|~|RAW MATERIALS|~|1057|~|FT|~|10" NPS PIPE, SA106-B|~||~||~|P
+1|~|59|~|1|~|RAW MATERIALS|~|1058|~|FT|~|12" NPS PIPE, SA106-B|~||~||~|P
+1|~|60|~|1|~|RAW MATERIALS|~|1059|~|FT|~|14" NPS PIPE, SA106-B|~||~||~|J
+1|~|61|~|1|~|RAW MATERIALS|~|1060|~|FT|~|16" NPS PIPE, SA106-B|~||~||~|J
+1|~|62|~|1|~|RAW MATERIALS|~|1061|~|FT|~|18" NPS PIPE, SA106-B|~||~||~|J
+1|~|63|~|1|~|RAW MATERIALS|~|1062|~|FT|~|20" NPS PIPE, SA106-B|~||~||~|P
+1|~|64|~|1|~|RAW MATERIALS|~|1063|~|FT|~|24" NPS PIPE, SA106-B|~||~||~|J
+1|~|65|~|1|~|RAW MATERIALS|~|1064|~|SF|~|3/16" SS|~||~||~|J
+1|~|66|~|1|~|RAW MATERIALS|~|1065|~|SF|~|1/4" SS|~||~||~|J
+1|~|67|~|1|~|RAW MATERIALS|~|1066|~|SF|~|1/4"Thk, 304SS Plate|~||~||~|P
+1|~|68|~|1|~|RAW MATERIALS|~|1067|~|SF|~|1/8"Thk, 304SS Plate|~||~||~|J
+1|~|69|~|1|~|RAW MATERIALS|~|1068|~|SF|~|11 GA SS|~||~||~|J
+1|~|70|~|1|~|RAW MATERIALS|~|1069|~|SF|~|14 GA SS|~||~||~|J
+1|~|71|~|1|~|RAW MATERIALS|~|1070|~|SF|~|18 GA SS|~||~||~|J
+1|~|72|~|1|~|RAW MATERIALS|~|1071|~|SF|~|20 GA SS|~||~||~|J
+1|~|73|~|1|~|RAW MATERIALS|~|1072|~|SF|~|Plate 3/16"Thk, SA-36|~||~||~|P
+1|~|74|~|1|~|RAW MATERIALS|~|1073|~|SF|~|3/16" Thk HRS|~||~||~|J
+1|~|75|~|1|~|RAW MATERIALS|~|1074|~|SF|~|11 GA HRS|~||~||~|P
+1|~|76|~|1|~|RAW MATERIALS|~|1075|~|SF|~|18 GA HRS|~||~||~|J
+1|~|77|~|1|~|RAW MATERIALS|~|1076|~|SF|~|20 GA HRS|~||~||~|P
+1|~|78|~|1|~|RAW MATERIALS|~|1077|~|SF|~|24 GA HRS|~||~||~|J
+1|~|79|~|1|~|RAW MATERIALS|~|1078|~|FT|~|CERAMIC ROPE 3/8" SQUARE 2300F|~||~||~|P
+1|~|80|~|1|~|RAW MATERIALS|~|1079|~|SF|~|DURABLANKET-S 2"Thk|~||~||~|P
+1|~|81|~|1|~|RAW MATERIALS|~|1080|~|EA|~|FSK Blanket, 2"Th x 4FT x 75Ft|~||~||~|P
+1|~|82|~|1|~|RAW MATERIALS|~|1081|~|EA|~|GEMCOWOOL, 2300F, 42"x72"x1"|~||~||~|P
+1|~|83|~|1|~|RAW MATERIALS|~|1082|~|SF|~|1/2" Thk M-BOARD|~||~||~|P
+1|~|84|~|1|~|RAW MATERIALS|~|1083|~|SF|~|1" Thk M-BOARD|~||~||~|P
+1|~|85|~|1|~|RAW MATERIALS|~|1084|~|SF|~|3/4" DUCT INSULATION|~||~||~|P
+1|~|86|~|1|~|RAW MATERIALS|~|1085|~|EA|~|2" NPT Iron Threaded Cap, #150|~||~||~|P
+1|~|87|~|1|~|RAW MATERIALS|~|1086|~|EA|~|1-1/4" THREADED NIPPLE, SA53-B|~||~||~|P
+1|~|88|~|1|~|RAW MATERIALS|~|1087|~|Lb|~|PLICAST AIRLITE|~||~||~|P
+1|~|89|~|1|~|RAW MATERIALS|~|1088|~|Lb|~|PLICAST LWI 28|~||~||~|P
+1|~|90|~|1|~|RAW MATERIALS|~|1089|~|Lb|~|PLICAST TUFF MIX|~||~||~|P
+1|~|91|~|1|~|RAW MATERIALS|~|1090|~|SF|~|STL PERF SHEET 16GA 3/16" DIA|~||~||~|P
+1|~|92|~|1|~|RAW MATERIALS|~|1091|~|FT|~|Structural Channel, C4 x 6.25|~||~||~|P
+1|~|93|~|1|~|RAW MATERIALS|~|1092|~|FT|~|Structural Channel, C6 x 8.2|~||~||~|P
+1|~|94|~|1|~|RAW MATERIALS|~|1093|~|FT|~|2"x 2"x 3/8" Steel Angle, SA36|~||~||~|P
+1|~|95|~|1|~|RAW MATERIALS|~|1094|~|FT|~|Tacky Tadpole Tape, 1"W|~||~||~|P
+1|~|96|~|1|~|RAW MATERIALS|~|1095|~|EA|~|WetPac, 2300F 24" x 36" x 3/8"|~||~||~|J
+1|~|97|~|1|~|RAW MATERIALS|~|1096|~|FT|~|DURABLANKET-S 1"Thk X 24" W|~||~||~|P
+1|~|98|~|1|~|RAW MATERIALS|~|1097|~|FT|~|BN 1550-14 36"x3/16"Th SA516|~||~||~|J
+1|~|99|~|1|~|RAW MATERIALS|~|1098|~|FT|~|BNP 1984-05A 24"x1/4"Th SA516|~||~||~|J
+1|~|100|~|1|~|RAW MATERIALS|~|1099|~|FT|~|BNP 1779-01E 30"x1/4"Th SA516|~||~||~|J
+1|~|101|~|1|~|RAW MATERIALS|~|1100|~|FT|~|BNP 1779-01F 36"x1/4"Th SA516|~||~||~|J
+1|~|102|~|1|~|RAW MATERIALS|~|1101|~|FT|~|BN 2177-01B 42"x1/4"Th SA516|~||~||~|J
+1|~|103|~|1|~|RAW MATERIALS|~|1102|~|FT|~|BN 1909-22A 54"x1/4"Th SA516|~||~||~|J
+1|~|104|~|1|~|RAW MATERIALS|~|1103|~|FT|~|BN 1779-13A 48"x5/16"Th SA516|~||~||~|J
+1|~|105|~|1|~|RAW MATERIALS|~|1104|~|FT|~|BNP 1779-14A 54"x5/16"Th SA516|~||~||~|J
+1|~|106|~|1|~|RAW MATERIALS|~|1105|~|FT|~|BN 1779-15A 60"x5/16"Th SA516|~||~||~|J
+1|~|107|~|1|~|RAW MATERIALS|~|1106|~|FT|~|BN 2233-08A 66"x5/16"Th SA516|~||~||~|J
+1|~|108|~|1|~|RAW MATERIALS|~|1107|~|FT|~|BN 2233-05A 66"x3/8"Th SA516|~||~||~|J
+1|~|109|~|1|~|RAW MATERIALS|~|1108|~|FT|~|BN 2233-02A 72"x3/8"Th SA516|~||~||~|J
+1|~|110|~|1|~|RAW MATERIALS|~|1109|~|FT|~|BN 2112-02A 60"x3/8"Th SA516|~||~||~|J
+1|~|111|~|1|~|RAW MATERIALS|~|1110|~|FT|~|BNP 1880-01 72"x1/2"Th SA516|~||~||~|J
+1|~|112|~|1|~|RAW MATERIALS|~|1111|~|FT|~|BNP 1880-02 84"x1/2"Th SA516|~||~||~|J
+1|~|113|~|1|~|RAW MATERIALS|~|1112|~|FT|~|BNP 1880-03 96"x1/2"Th SA516|~||~||~|J
+1|~|114|~|1|~|RAW MATERIALS|~|1113|~|FT|~|BNP 1880-04 96"x5/8"Th SA516|~||~||~|J
+1|~|115|~|1|~|RAW MATERIALS|~|1114|~|FT|~|BNP 1983-17B 30"x3/16"Th SA414|~||~||~|J
+1|~|116|~|1|~|RAW MATERIALS|~|1115|~|FT|~|BNP 1984-05B 24"x1/4"ThSA414|~||~||~|J
+1|~|117|~|1|~|RAW MATERIALS|~|1116|~|FT|~|BNP 1779-01EX 30"x1/4"Th SA414|~||~||~|J
+1|~|118|~|1|~|RAW MATERIALS|~|1117|~|FT|~|BN 2259-09A 30"x1/4"Th SA414|~||~||~|J
+1|~|119|~|1|~|RAW MATERIALS|~|1118|~|FT|~|BN 1779-01FX 36"x1/4"Th SA414|~||~||~|J
+1|~|120|~|1|~|RAW MATERIALS|~|1119|~|FT|~|BN 2177-01A 42"x1/4"Th A1011SS|~||~||~|J
+1|~|121|~|1|~|RAW MATERIALS|~|1120|~|FT|~|BN 2112-05A 48"x1/4"Th SA414|~||~||~|J
+1|~|122|~|1|~|RAW MATERIALS|~|1121|~|EA|~|48X13 7/8XX1/2 WOOL BRD|~||~||~|P
+1|~|123|~|1|~|RAW MATERIALS|~|1122|~|FT|~|FIBERGLASS TAPE 1/8"X1-1/2"|~||~||~|P
+1|~|124|~|1|~|RAW MATERIALS|~|1123|~|FT|~|1-1/2" NPS XXH SMLS SA106 GR.B|~||~||~|P
+1|~|125|~|1|~|RAW MATERIALS|~|1124|~|Lb|~|PLICAST SUPERFAB|~||~||~|P
