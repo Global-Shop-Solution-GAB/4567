@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pages>
+    <DefaultPage>
+      <Header />
+      <Footer />
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>190</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>5</Height>
+      </Size>
+      <X>0</X>
+      <Y>190</Y>
+      <Width>24</Width>
+      <Height>5</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+    <ForeColor>Menu</ForeColor>
+  </Selection>
+  <Gutter>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator>
+    <HighlightBackColor>Menu</HighlightBackColor>
+  </LineSeparator>
+  <Printing>
+    <Footer />
+    <Header />
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>190</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.Preflight.Start</string>
+        <string />
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>v.Local.sSql.Declare(String)</string>
+        <string>v.Local.i.Declare(Long)</string>
+        <string>v.Local.sTemp.Declare(String)</string>
+        <string>v.Local.sRow.Declare(String)</string>
+        <string>v.Local.iRows.Declare(Long)</string>
+        <string>v.Local.iMatNode.Declare(Long)</string>
+        <string>v.Local.iSurfAreaNode.Declare(Long)</string>
+        <string>v.Local.iWeightNode.Declare(Long)</string>
+        <string>v.Local.iLengthNode.Declare(Long)</string>
+        <string>v.Local.sChildRow.Declare(String)</string>
+        <string>v.Local.iLvl.Declare(Long)</string>
+        <string>v.Local.sParentPartRev.Declare(string)</string>
+        <string>v.Local.iQty.Declare(Float)</string>
+        <string>v.Local.fCost.Declare(Float)</string>
+        <string />
+        <string>'coded by SFF - 5/5/2017 </string>
+        <string>' this replaces project 4215 for this customer, they will use Menu: BOM&gt;Transactions&gt;BOM Compare w/this script instead of the stand-alone gab program in 4215</string>
+        <string />
+        <string>Function.Intrinsic.Control.If(v.Caller.Hook,=,50310)</string>
+        <string>	f.ODBC.Connection!conX.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass,72000)	</string>
+        <string>	'Get the Part # from description from inventory for All Parts in BDF and swap out the existing part# with the result.</string>
+        <string>	F.Intrinsic.BDF.Load("Orig","Main-PrePopulate-bdf")</string>
+        <string>	f.Intrinsic.BDF.Clone("Orig","Clone")</string>
+        <string />
+        <string>	f.Intrinsic.BDF.readcolumntitle("Clone",v.Local.sTemp)</string>
+        <string />
+        <string>	f.data.DataTable.CreateFromString("Pos",v.Local.sTemp,"column","string",v.Ambient.NewLine,"*!*",true)</string>
+        <string />
+        <string>	'get the position of the custom Node = Material</string>
+        <string>	f.Data.DataTable.Select("Pos","column = 'material'",v.Local.sTemp)</string>
+        <string>	Function.Intrinsic.Control.If(v.Local.sTemp,&lt;&gt;,"***NORETURN***")</string>
+        <string>		v.Local.iMatNode.Set(v.Local.sTemp.Long)</string>
+        <string>	Function.Intrinsic.Control.Else</string>
+        <string>		f.Intrinsic.UI.Msgbox("xml file is missing 'material' value")</string>
+        <string>		f.Intrinsic.Control.End</string>
+        <string />
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>	</string>
+        <string>	'Get position of surfacearea node</string>
+        <string>	f.Data.DataTable.Select("Pos","column = 'surfacearea'",v.Local.sTemp)</string>
+        <string>	Function.Intrinsic.Control.If(v.Local.sTemp,&lt;&gt;,"***NORETURN***")</string>
+        <string>		v.Local.iSurfAreaNode.Set(v.Local.sTemp.Long)</string>
+        <string>	Function.Intrinsic.Control.Else</string>
+        <string>		f.Intrinsic.UI.Msgbox("xml file is missing 'surfacearea' value")</string>
+        <string>		f.Intrinsic.Control.End</string>
+        <string />
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>	</string>
+        <string>	'Get position of Length Node</string>
+        <string>	f.Data.DataTable.Select("Pos","column = 'length'",v.Local.sTemp)</string>
+        <string>	Function.Intrinsic.Control.If(v.Local.sTemp,&lt;&gt;,"***NORETURN***")</string>
+        <string>		v.Local.iLengthNode.Set(v.Local.sTemp.Long)</string>
+        <string>	Function.Intrinsic.Control.Else</string>
+        <string>		f.Intrinsic.UI.Msgbox("xml file is missing 'length' value")</string>
+        <string>		f.Intrinsic.Control.End</string>
+        <string />
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>	</string>
+        <string>	'Get Position of Weight Node</string>
+        <string>	f.Data.DataTable.Select("Pos","column = 'weight'",v.Local.sTemp)</string>
+        <string>	Function.Intrinsic.Control.If(v.Local.sTemp,&lt;&gt;,"***NORETURN***")</string>
+        <string>		v.Local.iWeightNode.Set(v.Local.sTemp.Long)</string>
+        <string>	Function.Intrinsic.Control.Else</string>
+        <string>		f.Intrinsic.UI.Msgbox("xml file is missing 'weight' value")</string>
+        <string>		f.Intrinsic.Control.End</string>
+        <string />
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>	</string>
+        <string>	</string>
+        <string>	F.Intrinsic.BDF.ReadRowCount("Orig",V.Local.iRows)</string>
+        <string>	</string>
+        <string>	F.Intrinsic.math.Sub(V.Local.iRows,1,V.Local.iRows)</string>
+        <string>	F.Intrinsic.Control.For(V.Local.i,0,V.Local.iRows,1)</string>
+        <string>		</string>
+        <string>		F.Intrinsic.BDF.ReadRow("Orig",V.Local.i,V.Local.sRow)</string>
+        <string>		'split to use in If statement and in query to get child part</string>
+        <string>		F.Intrinsic.String.Split(V.Local.sRow,"|~|",V.Local.sTemp)</string>
+        <string />
+        <string>		'only check if NOT a top-level parent.</string>
+        <string>		f.Intrinsic.Control.If(v.Local.sTemp(10).Trim,&lt;&gt;,"0")</string>
+        <string>			'if Description Node Value = Sheet or is blank then skip</string>
+        <string>			f.Intrinsic.Control.If(v.Local.sTemp(3).UCase,=,"SHEET","OR",v.Local.sTemp(3).Trim,=,"")</string>
+        <string>				'exitfor and next(v.l.i) are not working when it is the last row, so doing this instead.</string>
+        <string>				f.Intrinsic.Control.If(v.Local.i,=,v.Local.iRows)</string>
+        <string>					'Save BDF after all parts have been swapped</string>
+        <string>					f.Intrinsic.BDF.save("Clone","Main-PrePopulate-bdf")</string>
+        <string>					f.Intrinsic.Control.ExitSub</string>
+        <string>				f.Intrinsic.Control.Else</string>
+        <string>					f.Intrinsic.Control.Next(v.Local.i)</string>
+        <string>				f.Intrinsic.Control.EndIf</string>
+        <string>				</string>
+        <string>			f.Intrinsic.Control.EndIf</string>
+        <string>		Function.Intrinsic.Control.EndIf</string>
+        <string>		</string>
+        <string />
+        <string>		'go ahead and write the current row, then next get child part based on the "material" node in the current line.</string>
+        <string>		f.Intrinsic.BDF.writerow("Clone",v.Local.sRow)</string>
+        <string>		'only attempt to add child if "material" node is NOT blank. </string>
+        <string>		f.Intrinsic.Control.If(v.Local.sTemp(v.Local.iMatNode).Trim,&lt;&gt;,"")</string>
+        <string />
+        <string>			'get child part from inventory based on inventory.description = value from "material" node.</string>
+        <string>			f.Intrinsic.String.Build("Select a.part as PartRev,left(a.Part,17) as part,right(a.part,3) as Rev,a.Description,a.Location,a.TIME_MATERIAL_LEAD,UPPER(a.um_Inventory) as UM_INVENTORY,b.code_source,a.product_line from v_INVENTORY_MSTR a left join inventory_mst2 b on a.part = b.part and a.location = b.location where ltrim(rtrim(a.DESCRIPTION)) = '{0}'",v.Local.sTemp(v.Local.iMatNode).Trim,v.Local.sSql)</string>
+        <string>			f.ODBC.Connection!conX.OpenRecordsetRO("rst",v.Local.sSql)</string>
+        <string>			f.Intrinsic.Control.If(v.ODBC.conX!rst.EOF,&lt;&gt;,true)</string>
+        <string>				</string>
+        <string>				'increment level and build parent part+rev for child row.</string>
+        <string>				f.Intrinsic.Math.Add(v.Local.sTemp(10).Long,1,v.Local.iLvl)</string>
+        <string>				</string>
+        <string>				</string>
+        <string>				'may not need this </string>
+        <string>'				f.Intrinsic.String.RPad(v.Local.sTemp(0)," ",17,v.Local.sParentPartRev)</string>
+        <string>'				f.Intrinsic.String.Build("{0}{1}",v.Local.sParentPartRev,v.Local.sTemp(1).Trim,v.Local.sParentPartRev)</string>
+        <string>				</string>
+        <string>				'Determine Qty based on UM</string>
+        <string>				f.Intrinsic.Control.SelectCase(v.ODBC.conX!rst.FieldValTrim!UM_INVENTORY)</string>
+        <string>					f.Intrinsic.Control.Case("SF")</string>
+        <string>						'for SF divide by 288</string>
+        <string>						f.Intrinsic.Math.Div(v.Local.sTemp(v.Local.iSurfAreaNode).Float,288,v.Local.iQty)</string>
+        <string>	</string>
+        <string>					Function.Intrinsic.Control.Case("FT")</string>
+        <string>						v.Local.iQty.Set(v.Local.sTemp(v.Local.iLengthNode).Float)</string>
+        <string>					f.Intrinsic.Control.Case("LB")</string>
+        <string>						v.Local.iQty.Set(v.Local.sTemp(v.Local.iWeightNode).Float)</string>
+        <string>					Function.Intrinsic.Control.CaseElse</string>
+        <string>						v.Local.iQty.Set(0)</string>
+        <string>				f.Intrinsic.Control.EndSelect</string>
+        <string>				</string>
+        <string>				'round qty to 4</string>
+        <string>				f.Intrinsic.Math.Round(v.Local.iQty,4,v.Local.iQty)</string>
+        <string>				</string>
+        <string>				'Get Cost</string>
+        <string>				f.Intrinsic.String.Build("select COST from v_INVENTORY_COST where PART = '{0}' and Locn = '{1}'",v.ODBC.conX!rst.FieldValTrim!PartRev,v.ODBC.conX!rst.FieldValTrim!Location,v.Local.sSql)</string>
+        <string>				f.ODBC.Connection!conX.OpenRecordsetRO("rstCost",v.Local.sSql)</string>
+        <string>				f.Intrinsic.Control.If(v.ODBC.conX!rstCost.EOF,&lt;&gt;,true)</string>
+        <string>					v.Local.fCost.Set(v.ODBC.conX!rstCost.FieldValFloat!COST)</string>
+        <string>				f.Intrinsic.Control.Else</string>
+        <string>					v.Local.fCost.Set(0)</string>
+        <string>				f.Intrinsic.Control.EndIf</string>
+        <string>				f.ODBC.conX!rstCost.Close</string>
+        <string>				</string>
+        <string>				'write BDF Child Part row				</string>
+        <string>			</string>
+        <string>				'PartNo|~|Revision|~|InvPart|~|Description|~|Quantity|~|</string>
+        <string>				f.Intrinsic.String.Build("{0}|~|{1}|~|True|~|{2}|~|{3}|~|",v.ODBC.conX!rst.FieldValTrim!Part,v.ODBC.conX!rst.FieldValTrim!Rev,v.ODBC.conX!rst.FieldValTrim!Description,v.Local.iQty.Format,v.local.sChildRow)</string>
+        <string />
+        <string>				'UM|~|Cost|~|Source|~|Drawing|~|Leadtime|~|</string>
+        <string>				f.intrinsic.string.build("{4}{0}|~|{1}|~|{2}|~||~|{3}|~|",v.ODBC.conX!rst.FieldValTrim!UM_Inventory,v.Local.fCost,v.ODBC.conX!rst.FieldValTrim!Code_source,v.ODBC.conX!rst.FieldValTrim!TIME_MATERIAL_LEAD,v.local.sChildRow,v.local.sChildRow)</string>
+        <string>				</string>
+        <string>				'Level|~|Location|~|Memo1|~|Memo2|~|Parent|~|Productline|~|</string>
+        <string>				f.Intrinsic.String.Build("{4}{0}|~|{1}|~||~||~|{2}|~|{3}|~|",v.Local.iLvl.String,v.ODBC.conX!rst.FieldValTrim!Location,v.Local.sTemp(0).Trim,v.ODBC.conX!rst.FieldValTrim!PRODUCT_LINE,v.local.sChildRow,v.local.sChildRow)</string>
+        <string>				</string>
+        <string>				</string>
+        <string>				'7/3/2017 removed gss_rm_uom from the columns based on latest xml.</string>
+        <string>				'Sequence|~|SortCode|~|Tag|~|Category|~|weight|~|material|~|surfacearea|~|length</string>
+        <string>				f.Intrinsic.String.Build("{0}1|~||~||~||~||~||~||~|",v.local.sChildRow,v.local.sChildRow)</string>
+        <string />
+        <string>				f.Intrinsic.BDF.writerow("Clone",v.Local.sChildRow)</string>
+        <string>			</string>
+        <string>			f.Intrinsic.Control.EndIf</string>
+        <string>			f.ODBC.conX!rst.Close</string>
+        <string>		Function.Intrinsic.Control.EndIf</string>
+        <string>	f.Intrinsic.Control.Next(v.Local.i)</string>
+        <string />
+        <string>	'Save BDF after all parts have been swapped</string>
+        <string>	f.Intrinsic.BDF.save("Clone","Main-PrePopulate-bdf")</string>
+        <string>	</string>
+        <string />
+        <string />
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4567_BOM_COMP_CHANGE_PART",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$$}$SUPERVSR$}$5/2/2017 11:11:24 AM$}$False</string>
+        <string>${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Loads BDF and for every part, it queries for real inventory part based on description and swaps part out in BDF.</string>
+        <string />
+        <string />
+        <string>Program.Sub.Comments.End</string>
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>135</WindowOriginY>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>2</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>4</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>188</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>190</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>195</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
