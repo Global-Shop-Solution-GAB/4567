@@ -1,0 +1,68 @@
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.i.Declare(Long)
+v.Local.sTemp.Declare(String)
+v.Local.sRow.Declare(String)
+v.Local.iRows.Declare(Long)
+
+'coded by SFF - 5/5/2017
+' this replaces project 4215 for this customer, they will use Menu: BOM>Transactions>BOM Compare w/this script instead of the stand-alone gab program in 4215
+
+Function.Intrinsic.Control.If(v.Caller.Hook,=,50310)
+	f.ODBC.Connection!conX.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass,72000)	
+	'Get the Part # from description from inventory for All Parts in BDF and swap out the existing part# with the result.
+	F.Intrinsic.BDF.Load("Orig","Main-PrePopulate-bdf")
+	f.Intrinsic.BDF.Clone("Orig","Clone")
+	F.Intrinsic.BDF.ReadRowCount("Orig",V.Local.iRows)
+	F.Intrinsic.math.Sub(V.Local.iRows,1,V.Local.iRows)
+	F.Intrinsic.Control.For(V.Local.i,0,V.Local.iRows,1)
+		F.Intrinsic.BDF.ReadRow("Orig",V.Local.i,V.Local.sRow)
+		F.Intrinsic.String.Split(V.Local.sRow,"|~|",V.Local.sTemp)
+		f.Intrinsic.Control.If(v.Local.sTemp(3).Trim,<>,"")
+			'get part from description
+			
+			f.Intrinsic.String.Build("Select Part from v_INVENTORY_MSTR where ltrim(rtrim(DESCRIPTION)) = '{0}'",v.Local.sTemp(3).Trim,v.Local.sSql)
+			f.ODBC.Connection!conX.OpenRecordsetRO("rst",v.Local.sSql)
+			f.Intrinsic.Control.If(v.ODBC.conX!rst.EOF,<>,true)
+			
+				'Set part and Loc
+				v.Local.sTemp(0).Set(v.ODBC.conX!rst.FieldValTrim!PART)
+				'set inv part flag to True
+				v.Local.sTemp(2).Set("True")
+			f.Intrinsic.Control.EndIf
+			f.ODBC.conX!rst.Close
+		Function.Intrinsic.Control.EndIf	
+		'rebuild row and write row to clone
+		F.Intrinsic.String.Join(V.Local.sTemp,"|~|",V.Local.sRow)
+		f.Intrinsic.BDF.writerow("Clone",v.Local.sRow)
+	f.Intrinsic.Control.Next(v.Local.i)
+	'Save BDF after all parts have been swapped
+
+	f.Intrinsic.BDF.save("Clone","Main-PrePopulate-bdf")
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_BOM_COMP_CHANGE_PART",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$SUPERVSR$}$5/2/2017 11:11:24 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Loads BDF and for every part, it queries for real inventory part based on description and swaps part out in BDF.
+
+
+Program.Sub.Comments.End
