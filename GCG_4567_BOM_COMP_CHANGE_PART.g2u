@@ -1,0 +1,196 @@
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.i.Declare(Long)
+v.Local.sTemp.Declare(String)
+v.Local.sRow.Declare(String)
+v.Local.iRows.Declare(Long)
+v.Local.iMatNode.Declare(Long)
+v.Local.iSurfAreaNode.Declare(Long)
+v.Local.iWeightNode.Declare(Long)
+v.Local.iLengthNode.Declare(Long)
+v.Local.sChildRow.Declare(String)
+v.Local.iLvl.Declare(Long)
+v.Local.sParentPartRev.Declare(string)
+v.Local.iQty.Declare(Float)
+v.Local.fCost.Declare(Float)
+
+'coded by SFF - 5/5/2017 
+' this replaces project 4215 for this customer, they will use Menu: BOM>Transactions>BOM Compare w/this script instead of the stand-alone gab program in 4215
+
+Function.Intrinsic.Control.If(v.Caller.Hook,=,50310)
+	f.ODBC.Connection!conX.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass,72000)	
+	'Get the Part # from description from inventory for All Parts in BDF and swap out the existing part# with the result.
+	F.Intrinsic.BDF.Load("Orig","Main-PrePopulate-bdf")
+	f.Intrinsic.BDF.Clone("Orig","Clone")
+
+	f.Intrinsic.BDF.readcolumntitle("Clone",v.Local.sTemp)
+
+	f.data.DataTable.CreateFromString("Pos",v.Local.sTemp,"column","string",v.Ambient.NewLine,"*!*",true)
+
+	'get the position of the custom Node = Material
+	f.Data.DataTable.Select("Pos","column = 'material'",v.Local.sTemp)
+	Function.Intrinsic.Control.If(v.Local.sTemp,<>,"***NORETURN***")
+		v.Local.iMatNode.Set(v.Local.sTemp.Long)
+	Function.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("xml file is missing 'material' value")
+		f.Intrinsic.Control.End
+
+	Function.Intrinsic.Control.EndIf
+	
+	'Get position of surfacearea node
+	f.Data.DataTable.Select("Pos","column = 'surfacearea'",v.Local.sTemp)
+	Function.Intrinsic.Control.If(v.Local.sTemp,<>,"***NORETURN***")
+		v.Local.iSurfAreaNode.Set(v.Local.sTemp.Long)
+	Function.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("xml file is missing 'surfacearea' value")
+		f.Intrinsic.Control.End
+
+	Function.Intrinsic.Control.EndIf
+	
+	'Get position of Length Node
+	f.Data.DataTable.Select("Pos","column = 'length'",v.Local.sTemp)
+	Function.Intrinsic.Control.If(v.Local.sTemp,<>,"***NORETURN***")
+		v.Local.iLengthNode.Set(v.Local.sTemp.Long)
+	Function.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("xml file is missing 'length' value")
+		f.Intrinsic.Control.End
+
+	Function.Intrinsic.Control.EndIf
+	
+	'Get Position of Weight Node
+	f.Data.DataTable.Select("Pos","column = 'weight'",v.Local.sTemp)
+	Function.Intrinsic.Control.If(v.Local.sTemp,<>,"***NORETURN***")
+		v.Local.iWeightNode.Set(v.Local.sTemp.Long)
+	Function.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("xml file is missing 'weight' value")
+		f.Intrinsic.Control.End
+
+	Function.Intrinsic.Control.EndIf
+	
+	
+	F.Intrinsic.BDF.ReadRowCount("Orig",V.Local.iRows)
+	
+	F.Intrinsic.math.Sub(V.Local.iRows,1,V.Local.iRows)
+	F.Intrinsic.Control.For(V.Local.i,0,V.Local.iRows,1)
+		
+		F.Intrinsic.BDF.ReadRow("Orig",V.Local.i,V.Local.sRow)
+		'split to use in If statement and in query to get child part
+		F.Intrinsic.String.Split(V.Local.sRow,"|~|",V.Local.sTemp)
+
+		'only check if NOT a top-level parent.
+		f.Intrinsic.Control.If(v.Local.sTemp(10).Trim,<>,"0")
+			'if Description Node Value = Sheet or is blank then skip
+			f.Intrinsic.Control.If(v.Local.sTemp(3).UCase,=,"SHEET","OR",v.Local.sTemp(3).Trim,=,"")
+				'exitfor and next(v.l.i) are not working when it is the last row, so doing this instead.
+				f.Intrinsic.Control.If(v.Local.i,=,v.Local.iRows)
+					'Save BDF after all parts have been swapped
+					f.Intrinsic.BDF.save("Clone","Main-PrePopulate-bdf")
+					f.Intrinsic.Control.ExitSub
+				f.Intrinsic.Control.Else
+					f.Intrinsic.Control.Next(v.Local.i)
+				f.Intrinsic.Control.EndIf
+				
+			f.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.EndIf
+		
+
+		'go ahead and write the current row, then next get child part based on the "material" node in the current line.
+		f.Intrinsic.BDF.writerow("Clone",v.Local.sRow)
+		'only attempt to add child if "material" node is NOT blank. 
+		f.Intrinsic.Control.If(v.Local.sTemp(v.Local.iMatNode).Trim,<>,"")
+
+			'get child part from inventory based on inventory.description = value from "material" node.
+			f.Intrinsic.String.Build("Select a.part as PartRev,left(a.Part,17) as part,right(a.part,3) as Rev,a.Description,a.Location,a.TIME_MATERIAL_LEAD,UPPER(a.um_Inventory) as UM_INVENTORY,b.code_source,a.product_line from v_INVENTORY_MSTR a left join inventory_mst2 b on a.part = b.part and a.location = b.location where ltrim(rtrim(a.DESCRIPTION)) = '{0}'",v.Local.sTemp(v.Local.iMatNode).Trim,v.Local.sSql)
+			f.ODBC.Connection!conX.OpenRecordsetRO("rst",v.Local.sSql)
+			f.Intrinsic.Control.If(v.ODBC.conX!rst.EOF,<>,true)
+				
+				'increment level and build parent part+rev for child row.
+				f.Intrinsic.Math.Add(v.Local.sTemp(10).Long,1,v.Local.iLvl)
+				
+				
+				'may not need this 
+'				f.Intrinsic.String.RPad(v.Local.sTemp(0)," ",17,v.Local.sParentPartRev)
+'				f.Intrinsic.String.Build("{0}{1}",v.Local.sParentPartRev,v.Local.sTemp(1).Trim,v.Local.sParentPartRev)
+				
+				'Determine Qty based on UM
+				f.Intrinsic.Control.SelectCase(v.ODBC.conX!rst.FieldValTrim!UM_INVENTORY)
+					f.Intrinsic.Control.Case("SF")
+						'for SF divide by 288
+						f.Intrinsic.Math.Div(v.Local.sTemp(v.Local.iSurfAreaNode).Float,288,v.Local.iQty)
+	
+					Function.Intrinsic.Control.Case("FT")
+						v.Local.iQty.Set(v.Local.sTemp(v.Local.iLengthNode).Float)
+					f.Intrinsic.Control.Case("LB")
+						v.Local.iQty.Set(v.Local.sTemp(v.Local.iWeightNode).Float)
+					Function.Intrinsic.Control.CaseElse
+						v.Local.iQty.Set(0)
+				f.Intrinsic.Control.EndSelect
+				
+				'round qty to 4
+				f.Intrinsic.Math.Round(v.Local.iQty,4,v.Local.iQty)
+				
+				'Get Cost
+				f.Intrinsic.String.Build("select COST from v_INVENTORY_COST where PART = '{0}' and Locn = '{1}'",v.ODBC.conX!rst.FieldValTrim!PartRev,v.ODBC.conX!rst.FieldValTrim!Location,v.Local.sSql)
+				f.ODBC.Connection!conX.OpenRecordsetRO("rstCost",v.Local.sSql)
+				f.Intrinsic.Control.If(v.ODBC.conX!rstCost.EOF,<>,true)
+					v.Local.fCost.Set(v.ODBC.conX!rstCost.FieldValFloat!COST)
+				f.Intrinsic.Control.Else
+					v.Local.fCost.Set(0)
+				f.Intrinsic.Control.EndIf
+				f.ODBC.conX!rstCost.Close
+				
+				'write BDF Child Part row				
+			
+				'PartNo|~|Revision|~|InvPart|~|Description|~|Quantity|~|
+				f.Intrinsic.String.Build("{0}|~|{1}|~|True|~|{2}|~|{3}|~|",v.ODBC.conX!rst.FieldValTrim!Part,v.ODBC.conX!rst.FieldValTrim!Rev,v.ODBC.conX!rst.FieldValTrim!Description,v.Local.iQty.Format,v.local.sChildRow)
+
+				'UM|~|Cost|~|Source|~|Drawing|~|Leadtime|~|
+				f.intrinsic.string.build("{4}{0}|~|{1}|~|{2}|~||~|{3}|~|",v.ODBC.conX!rst.FieldValTrim!UM_Inventory,v.Local.fCost,v.ODBC.conX!rst.FieldValTrim!Code_source,v.ODBC.conX!rst.FieldValTrim!TIME_MATERIAL_LEAD,v.local.sChildRow,v.local.sChildRow)
+				
+				'Level|~|Location|~|Memo1|~|Memo2|~|Parent|~|Productline|~|
+				f.Intrinsic.String.Build("{4}{0}|~|{1}|~||~||~|{2}|~|{3}|~|",v.Local.iLvl.String,v.ODBC.conX!rst.FieldValTrim!Location,v.Local.sTemp(0).Trim,v.ODBC.conX!rst.FieldValTrim!PRODUCT_LINE,v.local.sChildRow,v.local.sChildRow)
+				
+				
+				'7/3/2017 removed gss_rm_uom from the columns based on latest xml.
+				'Sequence|~|SortCode|~|Tag|~|Category|~|weight|~|material|~|surfacearea|~|length
+				f.Intrinsic.String.Build("{0}1|~||~||~||~||~||~||~|",v.local.sChildRow,v.local.sChildRow)
+
+				f.Intrinsic.BDF.writerow("Clone",v.Local.sChildRow)
+			
+			f.Intrinsic.Control.EndIf
+			f.ODBC.conX!rst.Close
+		Function.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.i)
+
+	'Save BDF after all parts have been swapped
+	f.Intrinsic.BDF.save("Clone","Main-PrePopulate-bdf")
+	
+
+
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4567_BOM_COMP_CHANGE_PART",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$SUPERVSR$}$5/2/2017 11:11:24 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Loads BDF and for every part, it queries for real inventory part based on description and swaps part out in BDF.
+
+
+Program.Sub.Comments.End
